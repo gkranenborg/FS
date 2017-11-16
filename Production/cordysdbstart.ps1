@@ -1,0 +1,1 @@
+Send-MailMessage -To "gerben.kranenborg@us.fujitsu.com", "neal.wang@us.fujitsu.com", "mahesh.giri@in.fujitsu.com", "faisal.ansari@in.fujitsu.com" -Body 'The CordysDB Full Backup has been started' -Subject 'Start of second backup' -from 'mail@bop.feinsuch.com' -smtpServer '127.0.0.1'
