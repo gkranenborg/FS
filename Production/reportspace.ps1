@@ -92,7 +92,7 @@ if ( $srvDown )
 $body=@"
 The following Service(s) on the FSKS production server is / are not running : $srvDown
 "@
-	Send-MailMessage -To $users -Body $body -Subject 'Services ALERT FS Production Server' -from 'mail@bop.feinsuch.com' -smtpServer '127.0.0.1'
+	Send-MailMessage -To $users -Body $body -Subject 'Services ALERT FS K5 Production Server' -from 'mail@bop.feinsuch.com' -smtpServer '127.0.0.1'
 	If (Test-Path $alertFile) 
 	{ 
 		$stream = [IO.File]::OpenWrite('D:\Cordys\Production\webroot\shared\system\system\reports\AlertRpt.json')
@@ -175,12 +175,12 @@ foreach($disk in $disks)
 Add-Content $diskReport $datarow		
   if ($deviceID -eq "C:")
      {
-	    if ($percentFree -lt 15)
+	    if ($percentFree -lt 25)
 		{
 $body=@"
-The disk space on the FSKS production server for drive C: is low. Please check the server ASAP. ($deviceID $freeSpaceGB (Gb.))
+The disk space on the FSKS K5 production server for drive C: is low. Please check the server ASAP. ($deviceID $freeSpaceGB (Gb.))
 "@
-		  Send-MailMessage -To $users -Body $body -Subject 'Disk Space ALERT FS Production Server' -from 'mail@bop.feinsuch.com' -smtpServer '127.0.0.1'
+		  Send-MailMessage -To $users -Body $body -Subject 'Disk Space ALERT FS K5 Production Server' -from 'mail@bop.feinsuch.com' -smtpServer '127.0.0.1'
 		 If (Test-Path $alertFile) 
 		{ 
 			$stream = [IO.File]::OpenWrite('D:\Cordys\Production\webroot\shared\system\system\reports\AlertRpt.json')
@@ -206,9 +206,9 @@ The disk space on the FSKS production server for drive C: is low. Please check t
         if ($percentFree -lt 15) 
         { 
 $body=@"
-The disk space on the FSKS production server for drive D: or E: is low. Please check the server ASAP. ($deviceID $freeSpaceGB (Gb.))
+The disk space on the FSKS K5 production server for drive D:, E:, F:, G: or H: is low. Please check the server ASAP. ($deviceID $freeSpaceGB (Gb.))
 "@
-          Send-MailMessage -To $users -Body $body -Subject 'Disk Space ALERT FS Production Server' -from 'mail@bop.feinsuch.com' -smtpServer '127.0.0.1'
+          Send-MailMessage -To $users -Body $body -Subject 'Disk Space ALERT FS K5 Production Server' -from 'mail@bop.feinsuch.com' -smtpServer '127.0.0.1'
 		  		 If (Test-Path $alertFile) 
 		{ 
 			$stream = [IO.File]::OpenWrite('D:\Cordys\Production\webroot\shared\system\system\reports\AlertRpt.json')
