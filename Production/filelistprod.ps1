@@ -1,4 +1,4 @@
-# Version 1.0
+# Version 2.0
 # Script written by Gerben Kranenborg 02/09/2016
 #
 
@@ -7,9 +7,9 @@
 
 $files = Get-ChildItem "E:\FeinSuch\jcr\jackrabbit\repository" -Recurse | % { $_.Fullname }
 
-If (Test-Path E:\dailytransfers\filelistPROD.txt) 
+If (Test-Path G:\dailytransfers\filelistPROD.txt) 
     { 
-        Remove-Item E:\dailytransfers\filelistPROD.txt 
+        Remove-Item G:\dailytransfers\filelistPROD.txt 
     }
 
 foreach ($i in $files) {
@@ -18,6 +18,6 @@ foreach ($i in $files) {
      If ( $filelength -gt 1 ) {
         $filename = $details.Fullname;
         $datarow = "$filename, $filelength";
-        Add-Content E:\dailytransfers\filelistPROD.txt $datarow;
+        Add-Content G:\dailytransfers\filelistPROD.txt $datarow;
      }
 }

@@ -1,4 +1,4 @@
-# Version 2.0
+# Version 3.0
 # Script written by Gerben Kranenborg 03/01/2016
 #
 
@@ -6,12 +6,12 @@
 # that are not present in the DR JCR repository. This file will then serve as the input to transfer these missing files
 # to DR as needed.
 
-$difffile = "E:\dailytransfers\sortedcompareDRPROD.txt"
-$dirtyfile = "E:\dailytransfers\filenamesDRPROD.txt"
-$resultfile = "E:\dailytransfers\tempfile.txt"
-$copyfromprod = "E:\dailytransfers\copyfromprod.txt"
-$filenamefile = "E:\dailytransfers\filenamefile.txt"
-$removefromDR = "E:\dailytransfers\removefromDR.txt"
+$difffile = "G:\dailytransfers\sortedcompareDRPROD.txt"
+$dirtyfile = "G:\dailytransfers\filenamesDRPROD.txt"
+$resultfile = "G:\dailytransfers\tempfile.txt"
+$copyfromprod = "G:\dailytransfers\copyfromprod.txt"
+$filenamefile = "G:\dailytransfers\filenamefile.txt"
+$removefromDR = "G:\dailytransfers\removefromDR.txt"
 
 $data = Get-Content $difffile
 
